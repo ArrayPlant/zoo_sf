@@ -131,7 +131,6 @@ async def send_question(state: FSMContext, chat_id: int, data: dict, q_idx: int,
 #-----------------deep link для поделиться-----------------#
 @dp.message(CommandStart(deep_link=True))
 async def cmd_start_payload(message: types.Message, state: FSMContext, command: CommandObject):
-    print("pizda")
     payload = command.args
     if "_" in payload:
         uid_str, animal = payload.split("_", 1)
